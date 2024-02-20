@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Anta", sans-serif;
+}
+
+body {
+    background-color: darkgray;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz {
+    background-color: white;
+    padding: 20px;
+    width: 50%;
+    min-width: 500px;
+    border: 5px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.quiz > div {
+    padding: 10px;
+}
+
+.quiz > div > * {
+    padding: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+button#submit:disabled {
+    background-color: white;
+    color: rgb(220, 220, 220);
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#options button {
+    width: 100%;
+}
+
+#status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
