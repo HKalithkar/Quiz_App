@@ -118,7 +118,7 @@ for(let i=0; i<10; i++) {
 //Declaring variables
 let hideClickDiv = document.getElementById("hide-click");
 let questionDiv = document.getElementById("question");
-let time = 300;   //Timer
+let time;   //Timer
 let questionCount = 0;  //To check the question count
 let timerField = document.getElementById("timer");  //Timer element
 let scoreField = document.getElementById("score");  //Score
@@ -134,20 +134,18 @@ function hide() {
     hideClickDiv.innerHTML = "";
     questionDiv.classList.remove("hidden");
     time = 300;
+    timerField.textContent = "Time left: " + time;
+    let timeInterval = setInterval(function() {     //Timer
+        if(time > 0) {
+            time--;
+            timerField.textContent = "Time left: " + time;
+        }
+        else {
+            clearInterval(timeInterval);
+            alert("Time's up");
+        }
+    }, 1000);
 }
-
-//Timer
-timerField.textContent = "Time left: " + time;
-let timeInterval = setInterval(function() {
-    if(time > 0) {
-        time--;
-        timerField.textContent = "Time left: " + time;
-    }
-    else {
-        clearInterval(timeInterval);
-        alert("Time's up");
-    }
-}, 1000);
 
 //Initial Score
 scoreField.textContent = "Score: " + (scoreNum) + " / " + (displayData.length);
