@@ -138,6 +138,9 @@ function hide() {
     let timeInterval = setInterval(function() {     //Timer
         if(time > 0) {
             time--;
+            if(time < 10) {
+                timerField.style.color = "red";
+            }
             timerField.textContent = "Time left: " + time;
         }
         else {
